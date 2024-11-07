@@ -69,10 +69,18 @@ fn main() {
     println!("Sorted array: {:?}", numbers);
     search(&mut numbers);
     let numbers: Vec<i32> = vec![3, 4, 4, 4, 5];
-    let num = 3;
+    let num: i32 = 3;
     let result: Result<usize, usize> = numbers.binary_search(&num);
     match result {
         Ok(index) => println!("{}", index), // Print only the index if found
         Err(_) => println!("Not found"),    // Handle not found case
     }
+    let nums: [(i32, char); 3] = [(1, 'a'), (2, 'b'), (3, 'c')];
+    let result: Result<usize, usize> = nums.binary_search_by_key(&3, |&(num, _)| num);
+    match result {
+        Ok(index) => println!("Binary search by key - {:?}", index), // Print only the index if found
+        Err(_) => println!("Not found"),                             // Handle not found case
+    }
+
+    // Ok(1)
 }

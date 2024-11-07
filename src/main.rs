@@ -81,6 +81,27 @@ fn main() {
         Ok(index) => println!("Binary search by key - {:?}", index), // Print only the index if found
         Err(_) => println!("Not found"),                             // Handle not found case
     }
-
+    let people: &[&String] = &[
+        &"Mg Mg".to_string(),
+        &"Mg Ba".to_string(),
+        &"Hla Hla".to_string(),
+        &"Mya Mya".to_string(),
+    ];
     // Ok(1)
+    let mut hello: String = String::from("Hello");
+    hello.push_str("My Fren");
+    let slice: &str = &hello[0..5]; // result => hello
+    let x: () = {
+        let price: i32 = 500;
+        let qty: i32 = 10;
+        price * qty;
+    };
+    //
+    let a1: String = String::from("This is a1 text");
+    let a2: String = a1;
+}
+
+fn add(a: i32, b: i32) -> i32 {
+    let c: i32 = a + b;
+    c + 2
 }
